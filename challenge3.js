@@ -2,9 +2,9 @@ console.log("Enter your basic salary and benefits separated by a space:");
 
 process.stdin.on('data', (data) => {
     const salary = data.toString().trim();
-    const [basic, benefits] = salary.split(' ').map(Number); // Use space as separator and convert to numbers
+    const [basic, benefits] = salary.split(' ').map(Number);
 
-    const grossSalary = basic + (benefits || 0); // Default benefits to 0 if not provided
+    const grossSalary = basic + (benefits || 0); 
     const netSalary = grossSalary - (calculate_Paye(grossSalary) + calculate_NHIF(grossSalary) + calculate_NSSF(grossSalary));
 
     console.log(`Gross Salary: ${grossSalary}`);
